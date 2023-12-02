@@ -10,8 +10,12 @@ class SLL:
         return self.head==None
         
     def insert_at_first(self,item):
-        n=Node(item,self.head)
-        self.head=n
+        n=Node(item)
+        if self.head is not None:
+            n.next=self.head
+            self.head=n
+        else:
+            self.head=n
         
     def insert_at_last(self,item):
         n=Node(item)
