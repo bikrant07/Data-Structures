@@ -1,0 +1,38 @@
+class Solution:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode):
+        curr1=headA
+        curr2=headB
+        list1=[]
+        while curr1 is not None:
+            list1.append(id(curr1))
+            curr1=curr1.next
+        while curr2 is not None:
+            if id(curr2) in list1:
+                return curr2
+            curr2=curr2.next
+        return None
+
+#better
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode):
+        curr1=headA
+        curr2=headB
+        while curr1 is not curr2:
+            if curr1 is not None:
+                curr1=curr1.next
+            else:
+                curr1=headB
+            if curr2 is not None:
+                curr2=curr2.next
+            else:
+                curr2=headA
+        return curr1
+
+
+        
