@@ -1,0 +1,8 @@
+class Solution:
+    def getDecimalValue(self, head: ListNode) -> int:
+        str1=''
+        curr=head
+        while curr is not None:
+            str1 +=str(curr.val)
+            curr=curr.next
+        return int(str1,2)
