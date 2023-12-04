@@ -5,10 +5,12 @@ class Node:
 class Stack:
     def __init__(self,head=None):
         self.head=head
+        self.count=0
         
     def push(self,data):
         n=Node(data,self.head)
         self.head=n
+        self.count +=1
         
     def isEmpty(self):
         return self.head==None
@@ -16,6 +18,7 @@ class Stack:
     def pop(self):
         if not self.isEmpty():
             self.head=self.head.next
+            self.count -=1
         else:
             raise IndexError("Stack empty")
         
@@ -25,16 +28,19 @@ class Stack:
         else:
             raise IndexError("Stack empty")
     
+    # def size(self):
+    #     if self.isEmpty():
+    #         return 0
+    #     else:
+    #         count=0
+    #         curr=self.head
+    #         while curr !=None:
+    #             count +=1
+    #             curr=curr.next
+    #     return count
+    
     def size(self):
-        if self.isEmpty():
-            return 0
-        else:
-            count=0
-            curr=self.head
-            while curr !=None:
-                count +=1
-                curr=curr.next
-        return count
+        return self.count
 
 s1=Stack()
 print("Size: ",s1.size())
