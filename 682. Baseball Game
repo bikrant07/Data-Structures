@@ -1,0 +1,23 @@
+class Solution:
+    def calPoints(self, operations: List[str]) -> int:
+        record=[]
+        sum=0
+        for i in operations:
+            if i=='+':
+                add=int(record[-1])+int(record[-2])
+                record.append(str(add))
+                sum +=add
+            elif i=='D':
+                doub=2*int(record[-1])
+                record.append(str(doub))
+                sum +=doub
+            elif i=='C':
+                minus=int(record[-1])
+                record.pop()
+                sum -=minus
+            else:
+                score=int(i)
+                record.append(str(score))
+                sum +=score
+        return sum
+        
