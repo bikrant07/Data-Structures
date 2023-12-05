@@ -1,0 +1,34 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        self.left_list=[]
+        self.s=s
+
+        for i in self.s:
+            if i in '({[':
+                self.left_list.append(i)
+            else:
+                if not self.left_list:
+                    return False
+
+                if self.left_list[-1]=='(' and i==')':
+                    self.left_list.pop()
+                
+                elif self.left_list[-1]=='{' and i=='}':
+                    self.left_list.pop()
+                
+                elif self.left_list[-1]=='[' and i==']':
+                    self.left_list.pop()
+                
+                else:
+                    return False
+        if len(self.left_list)>0:
+            return False
+        else:
+            return True
+            
+            
+
+        
+
+
+        
