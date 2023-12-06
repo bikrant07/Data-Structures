@@ -1,0 +1,10 @@
+class Solution:
+    def findPeaks(self, mountain: List[int]) -> List[int]:
+        i=1
+        indices=[]
+        while i<(len(mountain)-1) and i !=0:
+            if mountain[i]>mountain[i-1] and mountain[i]>mountain[i+1]:
+                indices.append(i)
+            i = i+1
+
+        return indices
