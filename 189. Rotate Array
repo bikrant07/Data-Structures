@@ -1,0 +1,12 @@
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        changed_list=nums.copy()
+        for i,num in enumerate(nums):
+            index=(i+k)%len(nums)
+            changed_list[index]=num
+            
+        for i in range(len(nums)):
+            nums[i]=changed_list[i]
