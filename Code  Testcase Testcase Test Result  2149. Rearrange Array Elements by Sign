@@ -1,0 +1,22 @@
+class Solution:
+    def rearrangeArray(self, nums):
+        pos_list=[]
+        neg_list=[]
+        n=len(nums)
+        for num in nums:
+            if num>=0:
+                pos_list.append(num)
+            else:
+                neg_list.append(num)
+        even_ptr=0
+        odd_ptr=0
+        for i in range(n):
+            if i%2==0:
+                nums[i]=pos_list[even_ptr]
+                even_ptr+=1
+            else:
+                nums[i]=neg_list[odd_ptr]
+                odd_ptr+=1
+        return nums
+
+        
