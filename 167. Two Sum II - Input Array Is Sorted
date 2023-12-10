@@ -1,0 +1,14 @@
+class Solution:
+    def twoSum(self, numbers, target):
+        nums_map={}
+        for i in range(len(numbers)):
+            complement=target-numbers[i]
+            if complement in nums_map:
+                ans=[i+1,nums_map[complement]+1]
+                return sorted(ans)
+            else:
+                nums_map[numbers[i]]=i
+        return []
+
+
+        
