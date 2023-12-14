@@ -1,0 +1,10 @@
+class Solution:
+    def hasCycle(self, head):
+        curr=head
+        while curr:
+            if curr.val=='_':
+                return True
+            else:
+                curr.val='_'
+            curr=curr.next
+        return False
