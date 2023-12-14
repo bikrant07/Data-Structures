@@ -1,0 +1,19 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def reverseList(self, head):
+        curr=head
+        mylist=[]
+        while curr != None:
+            mylist.append(curr.val)
+            curr=curr.next
+        
+        curr=head
+        while curr != None:
+            curr.val=mylist.pop()
+            curr=curr.next
+        return head
+        
