@@ -1,0 +1,10 @@
+class Solution:
+    def plusOne(self, digits):
+        my_string = ''.join(map(str,digits))
+        digit = int(my_string)+1
+        res=[]
+        for c in str(digit):
+            res.append(int(c))
+        return res
+
+        
