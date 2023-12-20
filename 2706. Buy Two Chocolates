@@ -1,0 +1,16 @@
+class Solution:
+    def buyChoco(self, prices, money):
+        prices=sorted(prices)
+        real=money
+        count=0
+        for price in prices:
+            if price<=real:
+                real-=price
+                count+=1
+                if count==2:
+                    break
+            else:
+                return money
+        if count>=2:
+            return real
+        
