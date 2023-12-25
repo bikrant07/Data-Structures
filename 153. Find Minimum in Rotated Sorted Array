@@ -1,0 +1,17 @@
+class Solution:
+    def findMin(self,arr):
+        low=0
+        high=len(arr)-1
+        ans=100000
+        while low<=high:
+            mid=(low+high)//2
+            if arr[low]<=arr[high]: 
+                ans=min(arr[low],ans)
+                break
+            if arr[low]<=arr[mid]:
+                ans=min(arr[low],ans)
+                low=mid+1
+            else:
+                ans=min(arr[mid],ans)
+                high=mid-1
+        return ans
