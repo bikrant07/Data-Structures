@@ -1,8 +1,9 @@
+import sys
 class Solution:
     def findMin(self,arr):
         low=0
         high=len(arr)-1
-        ans=100000
+        ans=sys.maxsize
         while low<=high:
             mid=(low+high)//2
             if arr[low]<=arr[high]: 
